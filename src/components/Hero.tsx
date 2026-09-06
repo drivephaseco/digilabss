@@ -40,6 +40,7 @@ export default function Hero() {
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 50vw"
+            quality={65}
             src="https://storage.googleapis.com/uxpilot-auth.appspot.com/gen_24878ae6d9_5afeb9f34edcf4d5.png"
             alt="Professional industrial photography of high-grade stainless steel flanges stacked on a rack"
             priority

@@ -5,10 +5,30 @@ import GradeSelector from "@/components/GradeSelector";
 import SpecsTable from "@/components/SpecsTable";
 import Certifications from "@/components/Certifications";
 import ExportShipping from "@/components/ExportShipping";
-import EnquiryForm from "@/components/EnquiryForm";
 import FloatingContactWidget from "@/components/FloatingContactWidget";
 import Footer from "@/components/Footer";
 import MotionProvider from "@/components/MotionProvider";
+import dynamic from "next/dynamic";
+
+// Code-split react-hook-form + zod + resolver out of the initial bundle —
+// nothing above the fold needs them, and they were flagged as ~150 KiB of
+// unused JS on first load.
+const EnquiryForm = dynamic(() => import("@/components/EnquiryForm"), {
+  loading: () => (
+    <section id="enquiry" className="py-16 md:py-24 bg-accent text-white">
+      <div className="max-w-3xl mx-auto px-4 md:px-8 animate-pulse">
+        <div className="h-8 bg-white/10 rounded w-1/2 mx-auto mb-4" />
+        <div className="h-4 bg-white/5 rounded w-2/3 mx-auto mb-12" />
+        <div className="space-y-6">
+          <div className="h-14 bg-white/5 rounded" />
+          <div className="h-14 bg-white/5 rounded" />
+          <div className="h-32 bg-white/5 rounded" />
+          <div className="h-14 bg-white/10 rounded" />
+        </div>
+      </div>
+    </section>
+  ),
+});
 
 const productJsonLd = {
   "@context": "https://schema.org",

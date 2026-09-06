@@ -10,6 +10,7 @@ export default function ExportShipping() {
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 50vw"
+            quality={65}
             src="https://storage.googleapis.com/uxpilot-auth.appspot.com/gen_14a2e030c7_33a27d542eb5aec9.png"
             alt="Shipping container vessel at a Middle Eastern port at dusk"
             loading="lazy"
