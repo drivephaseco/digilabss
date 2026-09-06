@@ -1,25 +1,25 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const grades = [
   {
     grade: "304",
     standard: "AISI 304 / EN 1.4301",
     body: "General-purpose grade with excellent formability. Widely used in food, pharmaceutical, and architectural piping.",
-    specs: ["Chromium: 18\u201320%", "Nickel: 8\u201310.5%", "Max Temp: 870\u00b0C"],
+    specs: ["Chromium: 18–20%", "Nickel: 8–10.5%", "Max Temp: 870°C"],
   },
   {
     grade: "316",
     standard: "AISI 316 / EN 1.4401",
     body: "Enhanced corrosion resistance with molybdenum. The standard choice for marine and chemical environments.",
-    specs: ["Chromium: 16\u201318%", "Molybdenum: 2\u20133%", "Max Temp: 870\u00b0C"],
+    specs: ["Chromium: 16–18%", "Molybdenum: 2–3%", "Max Temp: 870°C"],
   },
   {
     grade: "316L",
     standard: "AISI 316L / EN 1.4404",
     body: "Low-carbon variant that prevents sensitization during welding. Preferred for critical welded assemblies.",
-    specs: ["Carbon: \u2264 0.03%", "Molybdenum: 2\u20133%", "Max Temp: 870\u00b0C"],
+    specs: ["Carbon: ≤ 0.03%", "Molybdenum: 2–3%", "Max Temp: 870°C"],
   },
 ];
 
@@ -35,7 +35,7 @@ export default function GradeSelector() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {grades.map((g) => (
-            <motion.div
+            <m.div
               key={g.grade}
               whileHover={{ y: -6, boxShadow: "0 20px 40px -12px rgba(30,58,138,0.25)" }}
               whileTap={{ scale: 0.98 }}
@@ -47,10 +47,10 @@ export default function GradeSelector() {
               <p className="text-sm mb-6">{g.body}</p>
               <ul className="text-sm space-y-2 text-secondary">
                 {g.specs.map((s) => (
-                  <li key={s}>&bull; {s}</li>
+                  <li key={s}>• {s}</li>
                 ))}
               </ul>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

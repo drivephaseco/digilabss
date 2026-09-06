@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { PackageOpen, FileText } from "lucide-react";
 
 export default function ExportShipping() {
   return (
@@ -8,8 +9,10 @@ export default function ExportShipping() {
           <Image
             fill
             className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
             src="https://storage.googleapis.com/uxpilot-auth.appspot.com/gen_14a2e030c7_33a27d542eb5aec9.png"
             alt="Shipping container vessel at a Middle Eastern port at dusk"
+            loading="lazy"
           />
         </div>
         <div>
@@ -20,7 +23,7 @@ export default function ExportShipping() {
           <div className="space-y-4">
             <div className="flex items-start gap-4">
               <div className="bg-primary/10 p-3 rounded">
-                <i className="fa-solid fa-box-open text-primary" />
+                <PackageOpen className="w-5 h-5 text-primary" />
               </div>
               <div>
                 <h4 className="font-semibold">Bulk & Container Loads</h4>
@@ -29,7 +32,7 @@ export default function ExportShipping() {
             </div>
             <div className="flex items-start gap-4">
               <div className="bg-primary/10 p-3 rounded">
-                <i className="fa-solid fa-file-invoice text-primary" />
+                <FileText className="w-5 h-5 text-primary" />
               </div>
               <div>
                 <h4 className="font-semibold">Complete Documentation</h4>

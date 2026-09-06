@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
+import { MapPin, Truck, Mail, Phone, Box, Menu, X } from "lucide-react";
+import WhatsAppIcon from "./icons/WhatsAppIcon";
 
 const navLinks = [
   { label: "Product Categories", href: "#", active: true },
@@ -18,24 +20,24 @@ export default function Header() {
       <div className="bg-primary text-white py-1.5 text-[11px] font-bold uppercase tracking-[0.1em] border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
           <div className="flex gap-6">
-            <span>
-              <i className="fa-solid fa-location-dot mr-2 text-secondary" /> Middle East Export Hub
+            <span className="flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-secondary" /> Middle East Export Hub
             </span>
-            <span className="hidden md:inline">
-              <i className="fa-solid fa-truck-fast mr-2 text-secondary" /> Direct Shipping to KSA, UAE, Oman & Qatar
+            <span className="hidden md:flex items-center gap-1.5">
+              <Truck className="w-3.5 h-3.5 text-secondary" /> Direct Shipping to KSA, UAE, Oman & Qatar
             </span>
           </div>
           <div className="flex gap-3 md:gap-5 items-center">
-            <a href="mailto:sales@bhansalistainless.com" className="hover:text-secondary transition-colors">
-              <i className="fa-solid fa-envelope mr-1.5" />
+            <a href="mailto:sales@bhansalistainless.com" className="flex items-center gap-1.5 hover:text-secondary transition-colors">
+              <Mail className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">sales@bhansalistainless.com</span>
             </a>
-            <a href="tel:+971501234567" className="hover:text-secondary transition-colors">
-              <i className="fa-solid fa-phone mr-1.5" />
+            <a href="tel:+971501234567" className="flex items-center gap-1.5 hover:text-secondary transition-colors">
+              <Phone className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">UAE: +971 50 123 4567</span>
             </a>
-            <a href="tel:+966559876543" className="hover:text-secondary transition-colors hidden md:inline">
-              <i className="fa-solid fa-phone mr-1.5" /> KSA: +966 55 987 6543
+            <a href="tel:+966559876543" className="hidden md:flex items-center gap-1.5 hover:text-secondary transition-colors">
+              <Phone className="w-3.5 h-3.5" /> KSA: +966 55 987 6543
             </a>
           </div>
         </div>
@@ -44,8 +46,8 @@ export default function Header() {
       {/* Main Header */}
       <header className="bg-white py-4">
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
-          <div className="text-2xl font-black text-primary tracking-tighter flex items-center">
-            <i className="fa-solid fa-cube text-3xl mr-2 text-secondary" />
+          <div className="text-2xl font-black text-primary tracking-tighter flex items-center gap-2">
+            <Box className="w-7 h-7 text-secondary" />
             BHANSALI<span className="text-accent">STAINLESS</span>
           </div>
 
@@ -68,7 +70,7 @@ export default function Header() {
               href="https://wa.me/966559876543"
               className="flex items-center gap-2 text-green-600 bg-green-50 px-4 py-2 rounded-full border border-green-200 hover:bg-green-100 transition-colors"
             >
-              <i className="fa-brands fa-whatsapp text-lg" />
+              <WhatsAppIcon className="w-4 h-4" />
               <span>KSA Support</span>
             </a>
             <a
@@ -84,16 +86,16 @@ export default function Header() {
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
-            className="md:hidden text-2xl text-accent"
+            className="md:hidden text-accent"
           >
-            <i className={menuOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars"} />
+            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </header>
 
       <AnimatePresence>
         {menuOpen && (
-          <motion.div
+          <m.div
             id="mobile-menu"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
@@ -116,7 +118,7 @@ export default function Header() {
                 href="https://wa.me/966559876543"
                 className="flex items-center gap-2 text-green-600"
               >
-                <i className="fa-brands fa-whatsapp text-lg" /> KSA Support
+                <WhatsAppIcon className="w-4 h-4" /> KSA Support
               </a>
               <a
                 href="#enquiry"
@@ -126,7 +128,7 @@ export default function Header() {
                 Get Bulk Quote
               </a>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

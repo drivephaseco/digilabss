@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
     <section className="relative hero-gradient text-white py-16 md:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -23,13 +24,13 @@ export default function Hero() {
           </p>
           <a
             href="#enquiry"
-            className="inline-flex items-center bg-white text-primary px-8 py-3 rounded font-semibold hover:bg-gray-100 transition-all"
+            className="inline-flex items-center gap-2 bg-white text-primary px-8 py-3 rounded font-semibold hover:bg-gray-100 transition-all"
           >
-            Request a Catalogue <i className="fa-solid fa-arrow-right ml-2" />
+            Request a Catalogue <ArrowRight className="w-4 h-4" />
           </a>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
@@ -38,21 +39,12 @@ export default function Hero() {
           <Image
             fill
             className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
             src="https://storage.googleapis.com/uxpilot-auth.appspot.com/gen_24878ae6d9_5afeb9f34edcf4d5.png"
             alt="Professional industrial photography of high-grade stainless steel flanges stacked on a rack"
             priority
           />
-        </motion.div>
-      </div>
-
-      <div className="absolute inset-0 opacity-10 pointer-events-none h-full w-full overflow-hidden">
-        <Image
-          fill
-          className="object-cover"
-          src="https://storage.googleapis.com/uxpilot-auth.appspot.com/gen_fd9efb5aa2_6dd1f0261ce3f08c.png"
-          alt=""
-          aria-hidden="true"
-        />
+        </m.div>
       </div>
     </section>
   );

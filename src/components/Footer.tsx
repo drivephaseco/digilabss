@@ -1,10 +1,12 @@
+import { Box, Phone } from "lucide-react";
+
 export default function Footer() {
   return (
     <footer className="bg-accent text-white border-t border-white/5 py-16">
       <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
         <div className="col-span-1">
-          <div className="text-2xl font-black text-white tracking-tighter flex items-center mb-6">
-            <i className="fa-solid fa-cube text-3xl mr-2 text-secondary" />
+          <div className="text-2xl font-black text-white tracking-tighter flex items-center gap-2 mb-6">
+            <Box className="w-7 h-7 text-secondary" />
             BHANSALI<span className="text-secondary">STAINLESS</span>
           </div>
           <p className="text-sm text-gray-400 leading-relaxed">
@@ -34,8 +36,8 @@ export default function Footer() {
           <p className="text-sm text-gray-400 mb-4">
             Industrial Area 4, Jebel Ali Free Zone<br />Dubai, United Arab Emirates
           </p>
-          <p className="text-sm text-gray-400">
-            <i className="fa-solid fa-phone mr-2 text-secondary" /> +971 4 881 2345
+          <p className="text-sm text-gray-400 flex items-center gap-2">
+            <Phone className="w-4 h-4 text-secondary" /> +971 4 881 2345
           </p>
         </div>
       </div>

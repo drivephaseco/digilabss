@@ -1,25 +1,26 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
+import { Check, Droplet, Thermometer, BadgeCheck, Truck, type LucideIcon } from "lucide-react";
 
-const features = [
+const features: { icon: LucideIcon; title: string; body: string }[] = [
   {
-    icon: "fa-droplet",
+    icon: Droplet,
     title: "Corrosion Resistant",
     body: "Ideal for coastal and chemical processing applications in the Gulf region.",
   },
   {
-    icon: "fa-temperature-high",
+    icon: Thermometer,
     title: "High-Temp Rated",
-    body: "Maintains strength from cryogenic temps up to 870\u00b0C.",
+    body: "Maintains strength from cryogenic temps up to 870°C.",
   },
   {
-    icon: "fa-certificate",
+    icon: BadgeCheck,
     title: "Fully Traceable",
     body: "Mill test certificates and heat-number tracking on every batch.",
   },
   {
-    icon: "fa-truck-fast",
+    icon: Truck,
     title: "Fast Regional Delivery",
     body: "Stocked in Dubai and Dammam for rapid project turnaround.",
   },
@@ -37,32 +38,35 @@ export default function ProductOverview() {
             </p>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-3">
-                <i className="fa-solid fa-check text-primary" /> Pressure Class 150 – 2500
+                <Check className="w-4 h-4 text-primary shrink-0" /> Pressure Class 150 – 2500
               </li>
               <li className="flex items-center gap-3">
-                <i className="fa-solid fa-check text-primary" /> Sizes ½″ – 72″
+                <Check className="w-4 h-4 text-primary shrink-0" /> Sizes ½″ – 72″
               </li>
               <li className="flex items-center gap-3">
-                <i className="fa-solid fa-check text-primary" /> Weld Neck, Blind, Slip-On
+                <Check className="w-4 h-4 text-primary shrink-0" /> Weld Neck, Blind, Slip-On
               </li>
             </ul>
           </div>
 
           <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {features.map((feature, i) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="border border-gray-100 p-6 rounded spec-card"
-              >
-                <i className={`fa-solid ${feature.icon} text-primary text-2xl mb-4`} />
-                <h3 className="font-semibold mb-2">{feature.title}</h3>
-                <p className="text-sm text-secondary">{feature.body}</p>
-              </motion.div>
-            ))}
+            {features.map((feature, i) => {
+              const Icon = feature.icon;
+              return (
+                <m.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="border border-gray-100 p-6 rounded spec-card"
+                >
+                  <Icon className="w-6 h-6 text-primary mb-4" />
+                  <h3 className="font-semibold mb-2">{feature.title}</h3>
+                  <p className="text-sm text-secondary">{feature.body}</p>
+                </m.div>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ import ExportShipping from "@/components/ExportShipping";
 import EnquiryForm from "@/components/EnquiryForm";
 import FloatingContactWidget from "@/components/FloatingContactWidget";
 import Footer from "@/components/Footer";
+import MotionProvider from "@/components/MotionProvider";
 
 const productJsonLd = {
   "@context": "https://schema.org",
@@ -32,16 +33,18 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
-      <Header />
-      <Hero />
-      <ProductOverview />
-      <GradeSelector />
-      <SpecsTable />
-      <Certifications />
-      <ExportShipping />
-      <EnquiryForm />
-      <FloatingContactWidget />
-      <Footer />
+      <MotionProvider>
+        <Header />
+        <Hero />
+        <ProductOverview />
+        <GradeSelector />
+        <SpecsTable />
+        <Certifications />
+        <ExportShipping />
+        <EnquiryForm />
+        <FloatingContactWidget />
+        <Footer />
+      </MotionProvider>
     </main>
   );
 }
