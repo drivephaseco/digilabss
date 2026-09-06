@@ -66,20 +66,24 @@ export default function EnquiryForm() {
         <form className="space-y-6" onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
+              <label htmlFor="name" className="sr-only">Full Name</label>
               <input
+                id="name"
                 {...register("name")}
                 type="text"
                 placeholder="Full Name"
-                className="w-full bg-white/5 border border-white/10 rounded p-4 focus:border-primary outline-none transition-colors"
+                className="w-full bg-white/5 border border-white/10 rounded p-4 placeholder:text-gray-400 focus:border-primary outline-none transition-colors"
               />
               {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>}
             </div>
             <div>
+              <label htmlFor="email" className="sr-only">Work Email</label>
               <input
+                id="email"
                 {...register("email")}
                 type="email"
                 placeholder="Work Email"
-                className="w-full bg-white/5 border border-white/10 rounded p-4 focus:border-primary outline-none transition-colors"
+                className="w-full bg-white/5 border border-white/10 rounded p-4 placeholder:text-gray-400 focus:border-primary outline-none transition-colors"
               />
               {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>}
             </div>
@@ -87,16 +91,20 @@ export default function EnquiryForm() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
+              <label htmlFor="phone" className="sr-only">Phone / WhatsApp</label>
               <input
+                id="phone"
                 {...register("phone")}
                 type="tel"
                 placeholder="Phone / WhatsApp"
-                className="w-full bg-white/5 border border-white/10 rounded p-4 focus:border-primary outline-none transition-colors"
+                className="w-full bg-white/5 border border-white/10 rounded p-4 placeholder:text-gray-400 focus:border-primary outline-none transition-colors"
               />
               {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone.message}</p>}
             </div>
             <div>
+              <label htmlFor="gradeInterest" className="sr-only">Grade Interest</label>
               <select
+                id="gradeInterest"
                 {...register("gradeInterest")}
                 defaultValue=""
                 className="w-full bg-white/5 border border-white/10 rounded p-4 text-gray-300 focus:border-primary outline-none transition-colors"
@@ -112,11 +120,13 @@ export default function EnquiryForm() {
             </div>
           </div>
 
+          <label htmlFor="message" className="sr-only">Project Details</label>
           <textarea
+            id="message"
             {...register("message")}
             rows={4}
             placeholder="Describe your project requirements, sizes, and estimated quantity..."
-            className="w-full bg-white/5 border border-white/10 rounded p-4 focus:border-primary outline-none transition-colors"
+            className="w-full bg-white/5 border border-white/10 rounded p-4 placeholder:text-gray-400 focus:border-primary outline-none transition-colors"
           />
 
           <button

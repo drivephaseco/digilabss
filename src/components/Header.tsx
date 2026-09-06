@@ -28,16 +28,28 @@ export default function Header() {
             </span>
           </div>
           <div className="flex gap-3 md:gap-5 items-center">
-            <a href="mailto:sales@bhansalistainless.com" className="flex items-center gap-1.5 hover:text-secondary transition-colors">
+            <a
+              href="mailto:sales@bhansalistainless.com"
+              aria-label="Email sales at sales@bhansalistainless.com"
+              className="flex items-center gap-1.5 hover:text-secondary transition-colors"
+            >
               <Mail className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">sales@bhansalistainless.com</span>
+              <span className="hidden sm:inline" aria-hidden="true">sales@bhansalistainless.com</span>
             </a>
-            <a href="tel:+971501234567" className="flex items-center gap-1.5 hover:text-secondary transition-colors">
+            <a
+              href="tel:+971501234567"
+              aria-label="Call UAE office at +971 50 123 4567"
+              className="flex items-center gap-1.5 hover:text-secondary transition-colors"
+            >
               <Phone className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">UAE: +971 50 123 4567</span>
+              <span className="hidden sm:inline" aria-hidden="true">UAE: +971 50 123 4567</span>
             </a>
-            <a href="tel:+966559876543" className="hidden md:flex items-center gap-1.5 hover:text-secondary transition-colors">
-              <Phone className="w-3.5 h-3.5" /> KSA: +966 55 987 6543
+            <a
+              href="tel:+966559876543"
+              aria-label="Call KSA office at +966 55 987 6543"
+              className="hidden md:flex items-center gap-1.5 hover:text-secondary transition-colors"
+            >
+              <Phone className="w-3.5 h-3.5" aria-hidden="true" /> KSA: +966 55 987 6543
             </a>
           </div>
         </div>

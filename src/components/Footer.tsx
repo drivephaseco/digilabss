@@ -14,7 +14,7 @@ export default function Footer() {
           </p>
         </div>
         <div>
-          <h4 className="font-bold mb-6 text-white uppercase tracking-wider text-xs">Products</h4>
+          <h3 className="font-bold mb-6 text-white uppercase tracking-wider text-xs">Products</h3>
           <ul className="text-sm text-gray-400 space-y-3">
             <li><a href="#" className="hover:text-white transition-colors">Stainless Steel Flanges</a></li>
             <li><a href="#" className="hover:text-white transition-colors">Buttweld Fittings</a></li>
@@ -23,7 +23,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="font-bold mb-6 text-white uppercase tracking-wider text-xs">Quick Links</h4>
+          <h3 className="font-bold mb-6 text-white uppercase tracking-wider text-xs">Quick Links</h3>
           <ul className="text-sm text-gray-400 space-y-3">
             <li><a href="#" className="hover:text-white transition-colors">Technical Data Sheets</a></li>
             <li><a href="#" className="hover:text-white transition-colors">Project Gallery</a></li>
@@ -32,7 +32,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="font-bold mb-6 text-white uppercase tracking-wider text-xs">Headquarters</h4>
+          <h3 className="font-bold mb-6 text-white uppercase tracking-wider text-xs">Headquarters</h3>
           <p className="text-sm text-gray-400 mb-4">
             Industrial Area 4, Jebel Ali Free Zone<br />Dubai, United Arab Emirates
           </p>
