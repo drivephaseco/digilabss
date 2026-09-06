@@ -30,11 +30,20 @@ export async function POST(req: NextRequest) {
     // Forward to a Google Apps Script Web App bound to a Sheet.
     // See README.md "Enquiry storage" section for the Apps Script snippet.
     try {
-      await fetch(webhookUrl, {
+      const res = await fetch(webhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(submission),
+        redirect: "follow",
       });
+      const text = await res.text();
+      if (!res.ok) {
+        console.error(
+          `Google Sheet webhook returned ${res.status} ${res.statusText}. Body: ${text.slice(0, 500)}`
+        );
+      } else {
+        console.log("[enquiry submission forwarded to Sheet webhook]", res.status, text.slice(0, 200));
+      }
     } catch (err) {
       console.error("Failed to forward enquiry to Google Sheet webhook", err);
     }
